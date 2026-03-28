@@ -1,0 +1,39 @@
+{
+  "name": "next_teamdev_template",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "check": "npx prettier --check \"src/**/*.{css,js,ts,jsx,tsx}\"",
+    "format": "npx prettier --write \"src/**/*.{css,js,ts,jsx,tsx}\"",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{css,js,ts,jsx,tsx}": [
+      "prettier --write \"src/**/*.{css,js,ts,jsx,tsx}\"",
+      "eslint . --max-warnings 0"
+    ]
+  },
+  "dependencies": {
+    "@supabase/ssr": "^0.9.0",
+    "@supabase/supabase-js": "^2.99.2",
+    "next": "^16.1.7",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "eslint": "^9.39.4",
+    "eslint-config-next": "^16.1.7",
+    "eslint-config-prettier": "^10.1.8",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
+    "prettier": "3.8.1",
+    "typescript": "^5.9.3"
+  }
+}
