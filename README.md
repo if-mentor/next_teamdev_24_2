@@ -13,7 +13,7 @@
 **1. リポジトリのclone**
 
 ```bash
-git clone https://github.com/if-mentor/next_teamdev_template.git
+git clone https://github.com/if-mentor/next_teamdev_24_2.git
 ```
 
 **2. 依存関係のインストール**
