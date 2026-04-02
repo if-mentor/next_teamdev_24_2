@@ -1,16 +1,7 @@
 import styles from "./styles.module.css";
+import { TextBoxProps } from "./type";
 
-type Props = {
-  value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  label?: string;
-  placeholder?: string;
-  type?: string;
-  disabled?: boolean;
-  error?: string;
-};
-
-const TextBox = ({ value, onChange, label, placeholder, type = "text", disabled, error }: Props) => {
+const TextBox = ({ value, onChange, label, placeholder, type = "text", disabled, error }: TextBoxProps) => {
   return (
     <div className={styles.wrapper}>
       {label && <label className={styles.label}>{label}</label>}
