@@ -1,9 +1,4 @@
-export type TextBoxProps = {
-  value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+export type TextBoxProps = React.InputHTMLAttributes<HTMLInputElement> & {
   label?: string;
-  placeholder?: string;
-  type?: string;
-  disabled?: boolean;
   error?: string;
 };
