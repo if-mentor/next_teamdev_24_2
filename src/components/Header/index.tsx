@@ -1,9 +1,25 @@
+"use client";
+
+import { useState } from "react";
 import styles from "./styles.module.css";
 
-export default function Home() {
+const Header = () => {
+  const [isLoggedIn] = useState(false);
   return (
-    <div>
-      <h1 className={styles.title}>Hello Teamdev!!</h1>
-    </div>
+    <header className={styles.header}>
+      {isLoggedIn ? (
+        <>
+          <button className={styles.loginButton}>新規作成</button>
+          <button className={styles.registerButton}>ログアウト</button>
+        </>
+      ) : (
+        <>
+          <button className={styles.loginButton}>ログイン</button>
+          <button className={styles.registerButton}>新規登録</button>
+        </>
+      )}
+    </header>
   );
-}
+};
+
+export default Header;
