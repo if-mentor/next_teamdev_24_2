@@ -4,7 +4,8 @@ import { useState } from "react";
 import styles from "./styles.module.css";
 
 const Header = () => {
-  const [isLoggedIn] = useState(false);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   return (
     <header className={styles.header}>
       {isLoggedIn ? (
