@@ -1,6 +1,5 @@
-export type SelectBoxProps = Omit<React.SelectHTMLAttributes<HTMLSelectElement>, "value"> & {
+export type SelectBoxProps = React.SelectHTMLAttributes<HTMLSelectElement> & {
   label?: string;
-  value: string[];
+  options: string[];
   placeholder?: string;
-  disabled?: boolean;
 };
