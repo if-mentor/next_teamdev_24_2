@@ -1,4 +1,5 @@
 export type BlogCardProps = {
+  id: number;
   title: string;
   author: string;
   avatarUrl?: string;
