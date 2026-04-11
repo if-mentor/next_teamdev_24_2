@@ -6,9 +6,9 @@ import type { BlogCardProps } from "./type";
 
 const BlogCard = ({ id, title, author, avatarUrl, category, thumbnailUrl, content, createdAt }: BlogCardProps) => {
   return (
-    <div className={styles.card}>
+    <article className={styles.card}>
       <div className={styles.header}>
-        <h1 className={styles.title}>{title}</h1>
+        <h2 className={styles.title}>{title}</h2>
         <div className={styles.author}>
           <span>{author}</span>
           <Image
@@ -23,13 +23,15 @@ const BlogCard = ({ id, title, author, avatarUrl, category, thumbnailUrl, conten
       <Image src={thumbnailUrl} alt={title} width={640} height={320} className={styles.thumbnail} />
       <p className={styles.category}>{category}</p>
       <p className={styles.content}>{content}</p>
-      <p className={styles.createdAt}>{formatRelativeTime(createdAt)}</p>
       <div className={styles.footer}>
+        <time dateTime={new Date(createdAt).toISOString()} className={styles.createdAt}>
+          {formatRelativeTime(createdAt, "en")}
+        </time>
         <Link href={`/articles/${id}/edit`} className={styles.editButton}>
           編集
         </Link>
       </div>
-    </div>
+    </article>
   );
 };
 
