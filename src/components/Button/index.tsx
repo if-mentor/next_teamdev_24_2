@@ -1,29 +1,18 @@
 import styles from "./styles.module.css";
-import { useTransition } from "react";
+import { ButtonProps } from "./type";
 
-type ButtonProps = {
-  label: string;
-  type?: "button" | "submit";
-  onClick: () => void;
-  disabled?: boolean;
-  variant?: "primary" | "secondary" | "success" | "danger";
-  size?: string;
-};
-
-const Button = ({ label, type = "button", onClick, disabled, variant = "primary", size = "medium" }: ButtonProps) => {
-  const [isPending, startTransition] = useTransition();
-  const handleClick = () => {
-    startTransition(onClick);
-  };
+const Button = ({
+  type = "button",
+  variant = "primary",
+  size = "md",
+  isLoading,
+  children,
+  ...buttonProps
+}: ButtonProps) => {
   return (
     <>
-      <button
-        type={type}
-        className={`${styles[variant]} ${styles[size]}`}
-        onClick={handleClick}
-        disabled={isPending || disabled}
-      >
-        {isPending ? "Loading..." : label}
+      <button type={type} className={`${styles[variant]} ${styles[size]}`} {...buttonProps}>
+        {isLoading ? "Loading..." : children}
       </button>
     </>
   );
