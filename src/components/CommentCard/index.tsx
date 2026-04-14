@@ -6,20 +6,24 @@ import { formatRelativeTime } from "@/utils/formatRelativeTime";
 export default function CommentCard({ userName, userAvatarUrl, content, createdAt }: CommentCardProps) {
   return (
     <div className={styles.card}>
-      <div className={styles.header}>
+      <div className={styles.inner}>
         <div className={styles.avatar}>
           <Image
-            src={userAvatarUrl || "/user-avatar.svg"}
+            src={userAvatarUrl || "/default_user_icon.png"}
             alt={`${userName}のアイコン`}
             width={32}
             height={32}
             className={styles.avatarImage}
           />
         </div>
-        <span className={styles.userName}>{userName}</span>
-        <span className={styles.time}>{formatRelativeTime(createdAt)}</span>
+        <div className={styles.body}>
+          <div className={styles.header}>
+            <span className={styles.userName}>{userName}</span>
+            <span className={styles.time}>{formatRelativeTime(createdAt)}</span>
+          </div>
+          <p className={styles.content}>{content}</p>
+        </div>
       </div>
-      <p className={styles.content}>{content}</p>
     </div>
   );
 }
