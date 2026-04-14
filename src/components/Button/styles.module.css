@@ -1,0 +1,55 @@
+.primary {
+  color: #000000;
+  border: 1px solid #000000;
+}
+.primary:hover {
+  color: #000000;
+  border: 1px solid #000000;
+  background: rgb(213, 211, 211);
+}
+.secondary {
+  color: white;
+  background: #383838;
+}
+.secondary:hover {
+  color: white;
+  background: #282828;
+}
+.success {
+  color: white;
+  background: #18a0fb;
+}
+.success:hover {
+  color: white;
+  background: #1384cf;
+}
+.danger {
+  color: white;
+  background: #ff4136;
+}
+.danger:hover {
+  color: white;
+  background: #de3830;
+}
+
+.md {
+  width: 120px;
+  height: 40px;
+  border-radius: 6px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.lg {
+  width: 480px;
+  height: 48px;
+  border-radius: 6px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+}
