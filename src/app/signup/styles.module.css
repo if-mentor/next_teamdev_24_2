@@ -1,0 +1,72 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 72px); /* ヘッダー高さ72pxを引く */
+  background-color: #ffffff;
+}
+
+.card {
+  width: 792px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Figmaのカード高さ767pxを再現するため上下余白を広げる */
+  padding: 106px 0;
+}
+
+.title {
+  font-family: "Geist", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 42px;
+  color: #000000;
+  margin-bottom: 32px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.inputGroup {
+  margin: 24px 0;
+  width: 480px;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputGroup label {
+  line-height: 24px;
+}
+
+.inputGroup:last-of-type {
+  margin-bottom: 0;
+}
+
+.buttonContainer {
+  margin-top: 32px;
+  margin-bottom: 0;
+}
+
+.footerLink {
+  width: 480px;
+  display: flex;
+  justify-content: flex-end;
+  font-family: "Geist", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  color: #000000;
+  margin-top: 8px;
+}
+
+.link {
+  color: #18a0fb;
+  text-decoration: none;
+}
