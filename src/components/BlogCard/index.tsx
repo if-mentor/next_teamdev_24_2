@@ -1,10 +1,9 @@
-import Link from "next/link";
 import { formatRelativeTime } from "@/utils/formatRelativeTime";
 import Image from "next/image";
 import styles from "./styles.module.css";
 import type { BlogCardProps } from "./type";
 
-const BlogCard = ({ id, title, author, avatarUrl, category, thumbnailUrl, content, createdAt }: BlogCardProps) => {
+const BlogCard = ({ title, author, avatarUrl, category, thumbnailUrl, content, createdAt }: BlogCardProps) => {
   return (
     <article className={styles.card}>
       <div className={styles.header}>
@@ -27,9 +26,6 @@ const BlogCard = ({ id, title, author, avatarUrl, category, thumbnailUrl, conten
         <time dateTime={new Date(createdAt).toISOString()} className={styles.createdAt}>
           {formatRelativeTime(createdAt, "en")}
         </time>
-        <Link href={`/articles/${id}/edit`} className={styles.editButton}>
-          編集
-        </Link>
       </div>
     </article>
   );
