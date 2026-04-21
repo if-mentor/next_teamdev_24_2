@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useMemo, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import styles from "./styles.module.css";
 import type { ImageUploaderPreviewProps } from "./type";
@@ -19,18 +19,19 @@ const ImageUploaderPreview = ({
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const file = value !== undefined ? value : imageFile;
+  const [localUrl, setLocalUrl] = useState<string | null>(null);
 
-  // File → blob URL に変換（useMemo で同期的に計算）
-  const localUrl = useMemo(() => {
-    if (!file) return null;
-    return URL.createObjectURL(file);
-  }, [file]);
-
-  // blob URL のメモリ解放（localUrl が変わった時 or アンマウント時）
   useEffect(() => {
-    if (!localUrl) return;
-    return () => URL.revokeObjectURL(localUrl);
-  }, [localUrl]);
+    if (!file) {
+      queueMicrotask(() => setLocalUrl(null));
+      return;
+    }
+
+    const url = URL.createObjectURL(file);
+    queueMicrotask(() => setLocalUrl(url));
+
+    return () => URL.revokeObjectURL(url);
+  }, [file]);
 
   const displayUrl = localUrl || (!file && previewUrl ? previewUrl : null);
 
