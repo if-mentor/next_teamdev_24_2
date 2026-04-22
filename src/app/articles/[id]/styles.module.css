@@ -77,7 +77,8 @@
 }
 
 .commentField::placeholder {
-  color: rgba(0, 0, 0, 0.4);
+  /* Figma: #000000 / 50% */
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .commentSubmitRow {
