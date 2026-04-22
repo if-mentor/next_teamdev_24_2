@@ -1,13 +1,11 @@
 import Link from "next/link";
 import Button from "@/components/Button";
 import TextBox from "@/components/TextBox";
-import Header from "@/components/Header";
 import styles from "./styles.module.css";
 
 export default function SignUpPage() {
   return (
     <div className={styles.container}>
-      <Header />
       <div className={styles.card}>
         <h1 className={styles.title}>新規登録</h1>
         <form className={styles.form}>
