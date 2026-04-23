@@ -4,7 +4,7 @@ import Button from "@/components/Button";
 import PostCard from "@/components/PostCard";
 
 export default function Home() {
-  // task24 ホーム画面作成時のダミーデータ
+  // task24 ホーム画面作成時のダミーデータ sampleCardはバックエンド作成後に削除予定
   const sampleCard = {
     title: "title",
     author: "author",
@@ -16,12 +16,10 @@ export default function Home() {
     <div className={styles.container}>
       <div className={styles.searchWrapper}>
         <TextBox placeholder="検索したい記事を入力してください" />
-        <Button variant="secondary" size="md">
-          検索
-        </Button>
+        <Button variant="secondary">検索</Button>
       </div>
       <div className={styles.cardWrapper}>
-        {/*task24 ホーム画面作成時のダミーデータ*/}
+        {/*task24 ホーム画面作成時のダミーデータ　バックエンド作成時に修正予定*/}
         {Array.from({ length: 7 }).map((_, i) => (
           <PostCard
             key={i}
