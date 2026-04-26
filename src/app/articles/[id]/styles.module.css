@@ -19,36 +19,9 @@
   gap: 16px;
 }
 
-/* BlogCard の props を増やさず、詳細ページだけで編集導線を重ねる */
 .blogCardShell {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  width: 720px;
-  max-width: 100%;
-}
-
-.blogCardShell > :first-child {
-  grid-area: 1 / 1;
-}
-
-.cardEditLink {
-  grid-area: 1 / 1;
-  align-self: end;
-  justify-self: end;
-  width: 120px;
-  height: 40px;
-  margin-right: 40px;
-  margin-bottom: 24px;
-  border-radius: 6px;
-  background-color: #18a0fb;
-  color: #ffffff;
-  font-size: 15px;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1;
+  width: 100%;
+  max-width: 720px;
 }
 
 .comments {
@@ -77,7 +50,6 @@
 }
 
 .commentField::placeholder {
-  /* Figma: #000000 / 50% */
   color: rgba(0, 0, 0, 0.5);
 }
 
