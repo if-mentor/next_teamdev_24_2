@@ -1,0 +1,69 @@
+.page {
+  margin-top: 72px;
+  padding-top: 64px;
+  padding-bottom: 54px;
+  background-color: #ffffff;
+  min-height: calc(100vh - 72px);
+}
+
+.inner {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 36px;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.blogCardShell {
+  width: 100%;
+  max-width: 720px;
+}
+
+.comments {
+  width: 100%;
+  max-width: 720px;
+}
+
+.commentsTitle {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 30px;
+  letter-spacing: -0.015em;
+  color: #000000;
+  margin-bottom: 16px;
+}
+
+.commentField {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #d1d9e0;
+  border-radius: 5px;
+  font-size: 12px;
+  line-height: 24px;
+  letter-spacing: -0.015em;
+  background-color: #ffffff;
+}
+
+.commentField::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.commentSubmitRow {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 12px;
+}
+
+.commentList {
+  list-style: none;
+  margin: 32px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
