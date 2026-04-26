@@ -1,5 +1,6 @@
 import { formatRelativeTime } from "@/utils/formatRelativeTime";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./styles.module.css";
 import type { BlogCardProps } from "./type";
 
@@ -26,6 +27,10 @@ const BlogCard = ({ title, author, avatarUrl, category, thumbnailUrl, content, c
         <time dateTime={new Date(createdAt).toISOString()} className={styles.createdAt}>
           {formatRelativeTime(createdAt, "en")}
         </time>
+        {/* バックエンド実装後、href={`/articles/${id}/edit`} に差し替え */}
+        <Link href="#" className={styles.editButton}>
+          編集
+        </Link>
       </div>
     </article>
   );

@@ -1,11 +1,19 @@
 .card {
-  width: 720px;
-  min-height: 640px;
+  width: 100%;
+  max-width: 720px;
   border-radius: 32px;
   border: 1px solid #000000;
-  padding: 32px 40px 104px;
+  padding: 32px 40px;
   background-color: #ffffff;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+@media (min-width: 1440px) {
+  .card {
+    min-height: 640px;
+  }
 }
 
 .header {
@@ -38,7 +46,7 @@
 
 .thumbnail {
   width: 100%;
-  height: 320px;
+  height: auto;
   object-fit: cover;
 }
 
@@ -55,21 +63,17 @@
   margin-top: 16px;
 }
 
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 24px;
+}
+
 .createdAt {
   font-size: 12px;
   color: rgba(0, 0, 0, 0.5);
-  margin-top: 8px;
-}
-
-/* ✅ footerで一緒に並べる */
-.footer {
-  display: flex;
-  justify-content: space-between; /* 左右に分ける */
-  align-items: center;
-  position: absolute;
-  bottom: 24px;
-  left: 40px; /* createdAtの左位置 */
-  right: 40px;
 }
 
 .editButton {
@@ -83,4 +87,5 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
 }

@@ -1,7 +1,6 @@
 import BlogCard from "@/components/BlogCard";
 import Button from "@/components/Button";
 import CommentCard from "@/components/CommentCard";
-import Link from "next/link";
 import styles from "./styles.module.css";
 
 /*
@@ -20,7 +19,8 @@ const MOCK_ARTICLE = {
   author: "Author",
   category: "Category",
   thumbnailUrl: "/sample1.jpg",
-  content: "ここに記事本文が入ります。ダミーテキストです。複数行の内容を想定したプレースホルダとして表示しています。",
+  content:
+    "ここに記事本文が入ります。ダミーテキストです。複数行の内容を想定したプレースホルダとして表示しています。ここに記事本文が入ります。ダミーテキストです。複数行の内容を想定したプレースホルダとして表示しています。",
   createdAt: new Date(Date.now() - 60 * 1000),
 };
 
@@ -42,6 +42,7 @@ const MOCK_COMMENTS = [
 
 export default async function ArticleDetailPage({ params }: ArticleDetailPageProps) {
   const { id } = await params;
+  void id; // バックエンド実装後に記事取得・編集URLで使用予定
 
   return (
     <main className={styles.page}>
@@ -56,10 +57,6 @@ export default async function ArticleDetailPage({ params }: ArticleDetailPagePro
               content={MOCK_ARTICLE.content}
               createdAt={MOCK_ARTICLE.createdAt}
             />
-            {/* Issue #16（BlogCard）でカード内に移すまで暫定。移設後はこの Link を削除 */}
-            <Link href={`/articles/${id}/edit`} className={styles.cardEditLink}>
-              編集
-            </Link>
           </div>
           <section className={styles.comments} aria-labelledby="comments-heading">
             <h2 id="comments-heading" className={styles.commentsTitle}>
